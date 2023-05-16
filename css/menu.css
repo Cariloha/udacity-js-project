@@ -1,0 +1,162 @@
+/*MENU*/
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+}
+
+.navbar__logo {
+	line-height: 0;
+}
+
+.navbar__logo__img {
+	width: 180px;
+}
+
+.navbar__social {
+	display: flex;
+	flex-shrink: 0;
+	gap: 0.6rem;
+}
+
+.instagram i {
+	font-size: 2.4rem;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.navbar__burger {
+	cursor: pointer;
+}
+
+.navbar__burger div {
+	width: 25px;
+	height: 3px;
+	background-color: var(--white);
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+.menu.nav-active {
+	transform: translateX(0%);
+}
+
+.nav-item {
+	position: relative;
+}
+
+.nav-link:hover {
+	color: var(--black);
+}
+
+.navbar__desktop {
+	display: none;
+}
+
+.navbar__mobile {
+	display: flex;
+}
+
+.nav-link {
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.nav-link.active {
+	color: var(--white);
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+.navbar__menu ul li:last-child {
+	padding-bottom: unset;
+}
+
+.toggle .first {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .second {
+	opacity: 0;
+}
+
+.toggle .third {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.icon__transform {
+	transform: rotate(-180deg) translateX(-2rem);
+}
+
+@media screen and (max-width: 767px) {
+	.menu {
+		position: absolute;
+		right: 0;
+		height: calc(100vh - 120px);
+		top: 120px;
+		background-color: var(--logo);
+		flex-direction: column;
+		width: 70%;
+		transition: transform 0.5s ease-in;
+		transform: translateX(100%);
+		z-index: 1;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.nav-item {
+		padding-bottom: 6rem;
+	}
+
+	.nav-link {
+		color: var(--white);
+	}
+}
+
+@media screen and (min-width: 768px) {
+
+	.navbar__menu {
+		display: flex;
+		gap: 3rem;
+		margin: 0 auto;
+	}
+
+	.navbar__burger {
+		display: none;
+	}
+
+	.menu {
+		gap: 3rem;
+	}
+
+	.nav-link {
+		text-decoration: none;
+		color: var(--white);
+	}
+
+    .nav-link:hover {
+        color: var(--white);
+		text-decoration: underline;
+	}
+
+    .nav-link.active {
+		color: var(--black);
+        text-decoration: underline;
+		font-weight: 500;
+	}
+
+	.navbar__mobile {
+		display: none;
+	}
+
+	.navbar__desktop {
+		display: flex;
+	}
+}

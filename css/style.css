@@ -1,0 +1,42 @@
+@import "./menu.css";
+@import "./utilities.css";
+@import "./footer.css";
+
+
+:root {
+  /* Fonts */
+    --title: "Bubblegum Sans", sans-serif;
+    --text: "Karla", sans-serif;
+
+    /*Colors*/
+	--logo: #f27fb1;
+    --pink : #e43b91;
+    --textColor: #606060;
+    --black: #232323;
+    --white: #ffffff;
+
+}
+
+html {
+  font-size: 62.5%; /*10 px = 1rem */
+}
+
+body {
+    font-size: 16px; /* px fallback*/
+    font-size: 1.6rem; /*default font size for document*/
+    line-height: 1.5;
+    font-family: var(--text);
+}
+
+/* html,
+body {
+    overflow-x: hidden;
+    position: relative;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
