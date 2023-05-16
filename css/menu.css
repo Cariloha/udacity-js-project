@@ -145,6 +145,7 @@
 	.nav-link {
 		text-decoration: none;
 		color: var(--white);
+		padding: 1.6rem;
 	}
 
     .nav-link:hover {
@@ -153,8 +154,9 @@
 	}
 
     .nav-link.active {
-		color: var(--white);
+		color: var(--logo);
 		font-weight: 600;
+		background-color: var(--white);
 	}
 
 	.navbar__mobile {

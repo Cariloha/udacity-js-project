@@ -77,7 +77,7 @@ const footer = document.querySelector("footer");
 const footerTitle = footer.appendChild(document.createElement("p"));
 footerTitle.innerHTML = "Modoki craft 2023";
 
-// Animations
+// Animations & highlight section
 
 const options = {
   root: null,
@@ -85,11 +85,21 @@ const options = {
   rootMargin: "-88px",
 };
 
+const menu = document.querySelector(".menu");
+const catalogLink = menu.childNodes[1].firstChild;
+const aboutLink = menu.childNodes[2].firstChild;
+const reviewsLink = menu.childNodes[3].firstChild;
+const contactLink = menu.childNodes[4].firstChild;
+
+
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const catalog = document.querySelector(".catalog");
       catalog.classList.add("animate");
+      catalogLink.classList.add("active");
+    } else {
+      catalogLink.classList.remove("active");
     }
   });
 }, options);
@@ -99,6 +109,9 @@ const secondObserver = new IntersectionObserver(function (entries, observer) {
     if (entry.isIntersecting) {
       const catalog = document.querySelector(".about");
       catalog.classList.add("animate");
+      aboutLink.classList.add("active");
+    } else {
+      aboutLink.classList.remove("active");
     }
   });
 }, options);
@@ -108,6 +121,9 @@ const thirdObserver = new IntersectionObserver(function (entries, observer) {
     if (entry.isIntersecting) {
       const catalog = document.querySelector(".contact");
       catalog.classList.add("animate");
+      contactLink.classList.add("active");
+    } else {
+      contactLink.classList.remove("active");
     }
   });
 }, options);
@@ -117,6 +133,9 @@ const fourthObserver = new IntersectionObserver(function (entries, observer) {
     if (entry.isIntersecting) {
       const catalog = document.querySelector(".reviews");
       catalog.classList.add("animate");
+      reviewsLink.classList.add("active");
+    } else {
+      reviewsLink.classList.remove("active");
     }
   });
 }, options);
