@@ -52,7 +52,7 @@ document.querySelectorAll(".nav-link").forEach((anchor) => {
     const targetElement = document.querySelector(this.getAttribute("href"));
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop,
+        top: targetElement.offsetTop - 150,
         behavior: "smooth",
       });
     }
