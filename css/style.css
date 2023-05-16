@@ -11,14 +11,16 @@
     /*Colors*/
 	--logo: #f27fb1;
     --pink : #e43b91;
-    --textColor: #606060;
+    --button : #CE7DA5;
+    --gray: #919098;
     --black: #232323;
     --white: #ffffff;
 
 }
 
 html {
-  font-size: 62.5%; /*10 px = 1rem */
+    font-size: 62.5%; /*10 px = 1rem */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -40,3 +42,157 @@ body {
     padding: 0;
 }
 
+h1, h2, h3 {
+    font-family: var(--title);
+}
+
+h1 {
+    font-size: 4.8rem;
+    color: var(--white);
+}
+
+h2 {
+    font-size: 4rem;
+    margin-bottom: 3.2rem;
+    color: var(--gray);
+    text-align: center;
+}
+
+h3 {
+    font-size: 2.4rem; 
+    margin-bottom: 1.6rem;
+    color: var(--pink);
+}
+
+p, blockquote {
+    margin-bottom: 1.6rem;
+    font-family: var(--text);
+    font-weight: 400;
+}
+
+p:last-child {
+    margin-bottom: unset;
+}
+
+a {
+    color: var(--logo);
+}
+
+ul {
+    margin-left: 1.6rem;
+}
+
+ol {
+    margin-bottom: 1.6rem;
+    margin-left: 1.6rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+li:last-child {
+    margin-bottom: unset;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+button {
+    background-color: var(--button);
+    border: 2px solid var(--button);
+    box-shadow: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--footer);
+    color: var(--button);
+    border: 2px solid (--button);
+    transition: all 0.2s ease-in;
+}
+
+/* Hero */
+
+.hero {
+    background-color: var(--gray);
+    margin-top: 120px;
+    height: 400px;
+}
+
+.hero .container {
+    height: 100%;
+}
+
+/* Catalog */
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    flex-basis: 100%;
+    border: 1px solid var(--gray);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.4rem;
+}
+
+.card img {
+    border-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+}
+
+.card-title {
+    margin-top: 1.6rem;
+}
+
+.card-price {
+    margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+    flex-basis: calc(50% - 20px);
+}
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        flex-basis: calc(33.33% - 20px);
+    }
+}
+
+.catalog, .about, .contact {
+    opacity: 0;
+}
+
+.animate {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
