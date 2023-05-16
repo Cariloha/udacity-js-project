@@ -180,8 +180,13 @@ button:hover {
     }
 }
 
-.catalog, .about, .contact {
+.catalog {
     opacity: 0;
+}
+
+.about, .reviews, .contact {
+    opacity: 0;
+    height: 500px;
 }
 
 .animate {

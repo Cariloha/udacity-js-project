@@ -12,6 +12,11 @@ const menuItems = [
     class: "nav-link",
   },
   {
+    text: "Reviews",
+    url: "#reviews",
+    class: "nav-link",
+  },
+  {
     text: "Contact",
     url: "#contact",
     class: "nav-link",

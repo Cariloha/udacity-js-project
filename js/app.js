@@ -37,6 +37,18 @@ const aboutText = about.appendChild(document.createElement("p"));
 aboutText.innerHTML =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare vestibulum lorem, in congue leo viverra vitae. Pellentesque lacinia ligula nec volutpat venenatis. Nunc sit amet luctus metus. Pellentesque tempus ex id posuere bibendum. Curabitur quis tincidunt ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam semper ligula tellus, quis blandit arcu fermentum sed. Maecenas tincidunt iaculis pharetra. Praesent a varius urna. In nec laoreet diam. Nulla quam tortor, scelerisque eu enim nec, molestie tristique nibh. Integer sem lectus, fringilla vitae est vitae, hendrerit varius dui. Nunc lobortis diam at vestibulum aliquam. Donec cursus eget libero non faucibus. Donec sollicitudin turpis ut tortor tempor commodo. Donec luctus molestie augue, id scelerisque urna rutrum in. Curabitur at convallis arcu. Vivamus mollis, ante non vestibulum auctor, tellus dolor suscipit magna, rhoncus mollis mauris leo eu nisi. In vitae ex felis.";
 
+
+// Gallery section
+
+const reviews = document.querySelector(".reviews");
+
+const reviewsTitle = reviews.appendChild(document.createElement("h2"));
+reviewsTitle.innerHTML = "Reviews";
+
+const reviewsText = reviews.appendChild(document.createElement("p"));
+reviewsText.innerHTML =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum tincidunt magna, eleifend fringilla nulla dapibus semper. Phasellus mollis malesuada erat et pellentesque. Phasellus hendrerit libero urna, eu dictum orci efficitur a. In aliquet mi nec sapien gravida convallis. Duis maximus mattis commodo. Proin hendrerit tempor nibh, ac accumsan felis commodo in. Phasellus consequat sollicitudin metus, eget vulputate urna tristique eget. Duis pellentesque tempor varius. In sodales vulputate rutrum. Nulla commodo lorem at augue finibus, eget mollis magna malesuada. Maecenas eleifend felis ut magna varius finibus. ";
+
 // Contact section
 
 const contact = document.querySelector(".contact");
@@ -100,6 +112,17 @@ const thirdObserver = new IntersectionObserver(function (entries, observer) {
   });
 }, options);
 
+const fourthObserver = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const catalog = document.querySelector(".reviews");
+      catalog.classList.add("animate");
+    }
+  });
+}, options);
+
 observer.observe(catalog);
 secondObserver.observe(about);
 thirdObserver.observe(contact);
+fourthObserver.observe(reviews);
+
